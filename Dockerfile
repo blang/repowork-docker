@@ -18,6 +18,7 @@ RUN echo "export VISIBLE=now" >> /etc/profile
 RUN locale-gen
 
 RUN apt-get install -qy zip unzip bzip2 gzip p7zip-full mc nano ftp ncftp
+RUN apt-get install -qy screen tmux
 
 EXPOSE 22
 CMD ["/usr/sbin/sshd", "-D"]

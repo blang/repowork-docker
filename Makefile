@@ -7,7 +7,7 @@ PORTS = -p 2222:22
 .PHONY: build shell run start stop stoprm rm hc
 
 build:
-	docker build -t $(NS)/$(REPO) .
+	docker build $(OPTS) -t $(NS)/$(REPO) .
 
 shell:
 	docker run --rm --name $(NAME) -i -t $(PORTS) $(VOLUMES) $(ENV) $(NS)/$(REPO) /bin/bash
